@@ -1,12 +1,21 @@
-program area_perimeter
-    implicit none
-    INTEGER :: p,q,area,perimeter
-    p = 4
-    q = 6
-    area = p * q
-    perimeter = 2*(p+q)
-    PRINT *, "Area=",area, "Perimeter=",perimeter
+module area_perimeter
+implicit none
+  integer:: width, height, area, perimeter
+  contains 
+subroutine calc_for_rectangle()
+ implicit none
+print *,"Enter width and height of the rectangle"
+read *,width, height
+area = width*height
+perimeter = 2*(width+height)
+end subroutine calc_for_rectangle
 
-    
-end program area_perimeter
-    
+subroutine calc_for_square()
+ implicit none
+print *,"Enter width of the square"
+	  	read *,width
+		area = width*width
+		perimeter = 4*width
+	end subroutine calc_for_square
+	
+end module area_perimeter
